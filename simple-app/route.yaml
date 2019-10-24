@@ -1,0 +1,27 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    app: httpd
+    app.kubernetes.io/instance: simple-app
+  name: httpd
+  selfLink: /apis/route.openshift.io/v1/namespaces/simple-app/routes/httpd
+spec:
+  host: httpd-simple-app.apps.lisa-east1.sysdeseng.com
+  port:
+    targetPort: 8080
+  subdomain: ""
+  to:
+    kind: Service
+    name: httpd
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - status: "True"
+      type: Admitted
+
