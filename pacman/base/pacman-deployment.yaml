@@ -17,7 +17,7 @@ spec:
     spec:
       serviceAccount: pacman
       containers:
-      - image: quay.io/rcook/pacman-nodejs-app-pipeline:latest
+      - image: http://quay.io/mavazque/pacman2:latest
         name: pacman
         ports:
         - containerPort: 8080
