@@ -54,7 +54,7 @@ argocd app create --project default --name pacman-east1 --repo https://github.co
 https://pacman.demo-sysdeseng.com
 
 # Extend to east2 
-argocd app create --project default --name pacman-east2 --repo https://github.com/cooktheryan/lisa19.git --path lisa19/pacman/overlays/cluster2 --dest-server https://api.lisa-east2.sysdeseng.com:6443 --dest-namespace pacman  --revision master --sync-policy automated
+argocd app create --project default --name pacman-east2 --repo https://github.com/cooktheryan/lisa19.git --path pacman/overlays/cluster2 --dest-server https://api.lisa-east2.sysdeseng.com:6443 --dest-namespace pacman  --revision master --sync-policy automated
 
 # Set replicas to 0
 vi overlays/cluster1/pacman-deployment.yaml
@@ -64,7 +64,7 @@ git push origin master
 # Play the game
 
 # Extend to west2
-argocd app create --project default --name pacman-west2 --repo https://github.com/cooktheryan/lisa19.git --path lisa19/pacman/overlays/cluster3 --dest-server https://api.lisa-west2.sysdeseng.com:6443 --dest-namespace pacman  --revision master --sync-policy automated
+argocd app create --project default --name pacman-west2 --repo https://github.com/cooktheryan/lisa19.git --path pacman/overlays/cluster3 --dest-server https://api.lisa-west2.sysdeseng.com:6443 --dest-namespace pacman  --revision master --sync-policy automated
 
 # Remove east2 
 vi overlays/cluster2/pacman-deployment.yaml
